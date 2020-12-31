@@ -1,0 +1,107 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+.translate {
+  display: flex;
+  flex-direction: row;
+}
+
+.translate-language {
+  display: flex;
+  padding: 0px 30px;
+  height: 50px;
+  align-items: center;
+}
+
+.translate-language-region {
+  display: flex;
+  height: 100%;
+  padding: 0px 20px;
+  text-transform: uppercase;
+}
+.translate-language-region:hover{
+  cursor: pointer;
+  background-color: #cccccc;
+}
+
+.translate-container {
+  width: 700px;
+  height: auto;
+  margin: 40px 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2)
+}
+
+.translate-text-input,
+.translate-text-output {
+  background: #ffffff;
+  padding: 20px;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  resize: none;
+  line-height: 20px;
+}
+
+.translate-text-input:focus,
+.translate-text-output:focus {
+  outline: 0;
+}
+
+
+@keyframes spin {
+  0% { transform:  rotate(0deg);}
+  100% { transform:  rotate(360deg);}
+}
+
+/* Media Query: Tablet or Smaller */
+@media screen and (max-width : 1000px) {
+
+  .translate-text {
+    font-size: 2.5rem;
+  }
+}
+
+
+@media screen and (min-width : 768px) and (max-width: 1024px)  {
+
+  .translate, .translate-container {
+    width: 100%;
+  }
+
+  .translate-text-input, .translate-text-output {
+    max-width: 450px;
+  }
+}
+
+@media screen and (max-width : 768px) {
+
+  .translate, .translate-container {
+    width: 100%;
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .translate-text-input, .translate-text-output {
+    max-width: 100%;
+  }
+}
