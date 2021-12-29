@@ -9,28 +9,28 @@ $document.ready(function () {
         const valueInput = $(this).text();
         renderTranslateTextOutput(valueInput);
         $translateOutput.css({pointerEvents:'auto'});
-        // getTranslateFromServer();
+        getTranslateFromServer();
     })
     function renderTranslateTextOutput (val) {
         $translateOutput.text(val);
     }
-    // async function getTranslateFromServer() {
-    //     console.log('aaaa')
-    //     const proxyUrl = 'https://thawing-spire-73212.herokuapp.com/'
-    //     const apiUrl = 'http://10.161.207.181:5000/translator/translate';
-    //     try {
-    //         const response = await fetch(proxyUrl + apiUrl, {
-    //             method: 'POST',
-    //             headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify({"src": "I am a emloyee", "id": 0})
-    //         });
-    //         const data = await response.json();
-    //         console.log("data", data)
-    //     } catch (error) {
-    //         console.log("error", error)
-    //     }
-    // }
+    async function getTranslateFromServer() {
+        console.log('aaaa')
+        const proxyUrl = 'https://thawing-spire-73212.herokuapp.com/'
+        const apiUrl = 'http://10.161.207.181:5000/translator/translate';
+        try {
+            const response = await fetch(proxyUrl + apiUrl, {
+                method: 'POST',
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({"src": "I am a emloyee", "id": 0})
+            });
+            const data = await response.json();
+            console.log("data", data)
+        } catch (error) {
+            console.log("error", error)
+        }
+    }
 })
